@@ -1,1 +1,65 @@
-<h1>Hi</h1>
+<!-- Code for Carousel -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+       <%= image_tag 'slide1.JPG', class: 'img-responsive' %>      
+    </div>
+
+    <div class="item">
+    <%= image_tag 'slide2.JPG', class: 'img-responsive' %>    
+  </div>
+
+  <div class="item">
+    <%= image_tag 'slide3.jpg', class: 'img-responsive' %>    
+  </div>
+  </div>  
+</div>
+
+
+<br /><br />
+<!-- search input -->
+<div class="row">  
+  <div class="col-xs-3 col-xs-offset-4">
+    <div class="input-group input-group-lg">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <%= submit_tag "Search", class: 'btn btn-danger btn-lg' %>        
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+
+
+
+
+
+<br /><br /><br />
+
+<!-- 3 images -->
+<div class="col-xs-10 col-xs-offset-1 features text-center">  
+<div class="icon-container">
+
+  <div class="main-box col-sm-4">    
+    <%= link_to (image_tag ('icon.png')), places_path %>
+    <div class="center"><h1><%= link_to 'Seoul', places_path %></h1></div>    
+  </div>
+
+  <div class="main-box col-sm-4">    
+    <%= link_to (image_tag ('icon.png')), places_path %>
+    <div class="center"><h1><%= link_to 'New York', places_path %></h1></div>    
+  </div>
+
+  <div class="main-box col-sm-4">    
+    <%= link_to (image_tag ('icon.png')), places_path %>
+    <div class="center"><h1><%= link_to 'San Francisco', places_path %></h1></div>    
+  </div>
+
+  
+</div>
+</div>
+
+
+<br /><br /><br /><br />

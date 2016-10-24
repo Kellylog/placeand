@@ -1,0 +1,143 @@
+<div class="text-center">
+  <h1><%= @place.name %></h1>    
+  <br />
+ <i><%= @place.address %></i>
+  <br /><br />
+ <b><%= @place.description %></b>
+</div>
+
+<% if current_user && current_user == @place.user %>
+<%= link_to 'Delete the Place', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger pull-right' %>
+<% end %>
+
+
+<div class="clear"></div>
+  <hr />
+  
+
+
+
+
+
+<!-- photo --><!-- photo -->
+
+<h2 class="pull-left">Photos</h1>   &nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#myPhotoModal">
+  Add a photo
+</button>
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
+      </div>
+
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |p| %>
+
+        <div class="modal-body">
+          <%= p.input :picture %><br />
+          <%= p.input :caption %><br />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= p.submit "Add a Photo", class: 'btn btn-primary' %>
+        <% end %>
+        </div>
+      
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+
+
+ 
+<div class="row">
+<% @place.photos.each do |photo| %> 
+  <div class="col-xs-12 col-sm-3">
+    <br />
+    <div class="img-thumbnail">
+      <%= image_tag photo.picture_url(:thumb) %><br />
+      <div style="align: left; text-align:center;">
+       <em><%= photo.caption %></em><br />
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+ 
+
+
+<hr />
+
+
+
+
+
+<!-- comment --><!-- comment --><!-- comment -->
+<h2>Reviews</h2>
+<div class="comments">    
+  <% @place.comments.each do |comment| %>
+    <div class="comment">
+      <span class="comment_handle">
+        <%= comment.user.email %> :
+      </span>
+      <%= comment.review %>
+    </div>
+    <% end %>
+    <br />
+    <h4>Add your review</h4>
+    <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+    <%= f.input :review %>
+    <%= f.submit 'Add a review', class: 'btn btn-primary pull-right' %>
+    <% end %>
+</div>
+<br />
+
+
+<hr />
+
+
+
+
+
+
+
+
+<!-- map --><!-- map --><!-- map -->
+<div class="show-booyah-box col-xs-10 col-xs-offset-1">
+  <h2>Location</h2>
+  <i><%= @place.address %></i><br /><br />
+  <% if @place.latitude.present? && @place.longitude.present? %>
+<script>
+
+function initMap() {
+  var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>}; 
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: '<%= @place.name %>'
+  });
+}
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaLIaMqoqfD9S0XFvZdxi7wd6oHlLQA-Y&callback=initMap">
+  </script>
+
+
+        
+<div id="map"></div>
+<% end %>
+</div>
+
+     <div class="clear"></div>

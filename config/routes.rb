@@ -1,6 +1,16 @@
 Placeand::Application.routes.draw do
 
+  devise_for :users
   root 'mainpages#index'
+  get 'privacy', to: 'mainpages#privacy'
+  get 'copyright', to: 'mainpages#copyright'
+  get 'disclaimer', to: 'mainpages#disclaimer'
+  get 'terms', to: 'mainpages#terms'
+
+
+  resources :places
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

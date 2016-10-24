@@ -34,6 +34,20 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Include bootstrap
+gem 'bootstrap-sass'
+gem 'sprockets', '2.11.0'
+
+# Adding Simple Form
+gem 'simple_form'
+
+# Devise gem
+gem 'devise', '>= 3.2.4'
+
+
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

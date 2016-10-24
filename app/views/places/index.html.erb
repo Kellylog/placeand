@@ -1,0 +1,129 @@
+   
+<br />
+<div class="index-booyah-box col-xs-6">
+  <h2 class="text-center">Attractions & Restaurants</h2>
+  <hr />
+  <!-- checkbox and filter-->
+
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label>Looking for..</label>     
+    <label class="checkbox-inline">
+      <input type="checkbox" value="attractions">
+      <%= image_tag 'see.png' %> Attractions       
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="restaurants">
+      <%= image_tag 'eat.png' %> Restaurants
+    </label>
+  </div>
+</form>
+
+<hr />
+
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label>Neighborhoods</label>     
+    <label class="checkbox-inline">
+      <input type="checkbox" value="1">Hongdae
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="2">Itaewon
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="3">Myeongdong
+    </label>
+  </div>
+</form>
+  
+  <hr />
+  
+  
+
+  <% @places.each do |place| %>
+  <div class="index-booyah-inner-box col-xs-5 sidebar_item">    
+    <h4 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"><%= link_to place.name, place_path(place), target: '_blank' %></h4><br />
+    <i><%= place.description %></i><br />
+    <%= place.address %> 
+  </div>
+  <script>
+function mouseOver() {
+    document.getElementById("demo").innerHTML = (marker, i);
+}
+
+function mouseOut() {
+    document.getElementById("demo").style.color = "green";
+}
+</script>
+
+
+   <% end %>
+
+   
+</div>
+
+
+  
+
+
+   
+<!-- map -->
+<div class="index-booyah-box col-xs-6">
+
+<script>
+
+var locations = [
+      <% @places.each do |place| %>
+        <% if place == @places.last %>
+        ['<%= link_to place.name, place_path(place), target: '_blank' %><br/><%= place.description %>', <%= place.latitude %>, <%= place.longitude %>, 4]
+        <% else %>
+        ['<%= link_to place.name, place_path(place), target: '_blank' %><br/><%= place.description %>', <%= place.latitude %>, <%= place.longitude %>, 4],
+        <% end %>
+      <% end %>
+    ];
+
+function initMap() {   
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 37.555130, lng: 126.970642},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  var infowindow = new google.maps.InfoWindow({});
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {    
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map      
+    });
+
+    google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+      return function () {
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
+}
+
+
+  
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaLIaMqoqfD9S0XFvZdxi7wd6oHlLQA-Y&callback=initMap">
+  </script>
+
+
+
+
+
+
+<div id="map"></div>
+
+</div>
+
+<br class="clr" />
+
+<br />
