@@ -8,7 +8,12 @@ Placeand::Application.routes.draw do
   get 'terms', to: 'mainpages#terms'
 
 
-  resources :places
+  resources :places do
+    resources :comments, only: :create
+    resources :photos, only: :create
+  end
+
+  resources :users, only: :show
 
 
   # The priority is based upon order of creation: first created -> highest priority.
