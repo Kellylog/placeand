@@ -18,10 +18,10 @@
 <h1 class="text-center">My Places</h1><br />
 
 <% @user.places.each do |place| %>     
-<div class="userbox col-xs-5 text-left">
+<div class="userbox col-xs-5 text-center">
       <h3><%= link_to place.name, place_path(place) %></h3><br />
       <i><%= place.description %></i><br />
-      <p><%= place.address %></p><br />
+      <p><%= place.address %></p>
 </div>   
 	  <% end %>
 
@@ -51,3 +51,5 @@
 
 
 <div class="clear"></div>
+
+<hr />

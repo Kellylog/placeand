@@ -7,11 +7,11 @@
 
 <form class="form-inline" role="form">
   <div class="form-group">
-    <label>Looking for..</label>     
+    <label>Looking for..</label>&nbsp&nbsp     
     <label class="checkbox-inline">
       <input type="checkbox" value="attractions">
       <%= image_tag 'see.png' %> Attractions       
-    </label>
+    </label> &nbsp&nbsp
     <label class="checkbox-inline">
       <input type="checkbox" value="restaurants">
       <%= image_tag 'eat.png' %> Restaurants
@@ -23,7 +23,7 @@
 
 <form class="form-inline" role="form">
   <div class="form-group">
-    <label>Neighborhoods</label>     
+    <label>Neighborhoods</label>  &nbsp&nbsp   
     <label class="checkbox-inline">
       <input type="checkbox" value="1">Hongdae
     </label>
@@ -84,7 +84,7 @@ var locations = [
 
 function initMap() {   
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
+    zoom: 11,
     center: {lat: 37.555130, lng: 126.970642},
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
