@@ -16,13 +16,15 @@
 
 <!-- Places Display -->
 <h1 class="text-center">My Places</h1><br />
-<div class="userbox col-xs-10 col-xs-offset-1 text-left">
+
 <% @user.places.each do |place| %>     
+<div class="userbox col-xs-5 text-left">
       <h3><%= link_to place.name, place_path(place) %></h3><br />
-      <i><%= place.address %></i><br />
-      <p><%= place.description %></p><br />    
-<% end %>
-</div>
+      <i><%= place.description %></i><br />
+      <p><%= place.address %></p><br />
+</div>   
+	  <% end %>
+
 <div class="clear"></div>
 
 
@@ -36,13 +38,15 @@
 <h1 class="text-center">My Reviews</h1>
 <br />
 
+
+<% @user.comments.each do |comment| %>
 <div class="col-xs-10 col-xs-offset-1 text-left">
 <blockquote>
-<% @user.comments.each do |comment| %>
-<%= link_to comment.place.name, place_path(comment.place) %>: <%= comment.review %><br />
-<% end %>
-</blockquote><br />
+<%= link_to comment.place.name, place_path(comment.place) %>: <%= comment.review %>
+</blockquote>
 </div>
+<% end %>
+
 
 
 
