@@ -41,7 +41,7 @@
   <div class="clear"></div>
 
   <% @places.each do |place| %>
-  <div class="index-booyah-inner-box col-xs-5 sidebar_item">    
+  <div class="index-booyah-inner-box col-xs-5">    
     <%= link_to place.name, place_path(place), target: '_blank' %><br />
     <i><%= place.description %></i><br />
     <%= place.address %> 
