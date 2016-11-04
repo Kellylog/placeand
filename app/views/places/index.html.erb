@@ -42,24 +42,18 @@
 
   <% @places.each do |place| %>
   <div class="index-booyah-inner-box col-xs-5 sidebar_item">    
-    <h4 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"><%= link_to place.name, place_path(place), target: '_blank' %></h4><br />
+    <%= link_to place.name, place_path(place), target: '_blank' %><br />
     <i><%= place.description %></i><br />
     <%= place.address %> 
   </div>
-  <script>
-function mouseOver() {
-    document.getElementById("demo").innerHTML = (marker, i);
-}
+  <% end %>
 
-function mouseOut() {
-    document.getElementById("demo").style.color = "green";
-}
-</script>
+  <div class="clear"></div>
 
+<div class="text-center">
+  <%= paginate @places %>
+</div>
 
-   <% end %>
-
-   
 </div>
 
 

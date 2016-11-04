@@ -54,24 +54,32 @@
 </div>
 <div class="clear"></div>
 
-
+<br />
+<i>(Click on the image thumbnail to enlarge. Click again to hide.)</i>
+<br />
  
 <div class="row">
 <% @place.photos.each do |photo| %> 
   <div class="col-xs-12 col-sm-3">
     <br />
-    <div class="img-thumbnail">
-      <%= image_tag photo.picture_url(:thumb) %><br />
+    <div class="img-thumbnail img-responsive">
+      <%= image_tag photo.picture_url(:thumb) %><br />    
+
       <div style="align: left; text-align:center;">
-       <em><%= photo.caption %></em><br />
+       <em><%= photo.caption %></em><br />      
+        </div>
       </div>
     </div>
   </div>
+  
+
+
 <% end %>
-</div>
+
  
 
 
+<div class="clear"></div>
 <hr />
 
 

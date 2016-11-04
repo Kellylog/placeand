@@ -51,6 +51,8 @@ gem 'figaro', '>= 1.0.0'
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '~> 4.3.1'
 
+# Pagination
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -10,6 +10,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   process :resize_and_pad => [200, 200]
   end
 
+  
+
+
 
   # Choose what kind of storage to use for this uploader:
   storage :file
