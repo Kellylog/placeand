@@ -52,22 +52,21 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  padding:15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
 }
 
-.index-booyah-inner-box {
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
+.index-booyah-inner-box {  
   border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  border-color: #bebebd;
   margin: 10px 20px; 
   padding: 10px;
+  position: relative;
 }
 
 #map {
-  height: 600px;    
+  height: 600px;       
 }
 
 .show-booyah-box {
@@ -144,6 +143,7 @@ blockquote {
   border-left: 10px solid #ccc;
   padding: 10px;  
 }
+
 
 
 

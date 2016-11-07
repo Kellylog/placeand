@@ -40,19 +40,21 @@
   
   <div class="clear"></div>
 
+
+
   <% @places.each do |place| %>
-  <div class="index-booyah-inner-box col-xs-5">    
+  <div class="index-booyah-inner-box col-xs-5">
+
     <%= link_to place.name, place_path(place), target: '_blank' %><br />
     <i><%= place.description %></i><br />
     <%= place.address %> 
   </div>
   <% end %>
 
+
   <div class="clear"></div>
 
-<div class="text-center">
-  <%= paginate @places %>
-</div>
+
 
 </div>
 

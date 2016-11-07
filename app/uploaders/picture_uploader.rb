@@ -6,9 +6,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  version :thumb do
-  process :resize_and_pad => [200, 200]
-  end
+  
 
   
 
@@ -33,6 +31,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
+  
   # process :scale => [200, 300]
   #
   # def scale(width, height)
