@@ -105,7 +105,11 @@ h1, h2, h3, h4, h5, h6 {
 #map {
   height: 400px;       
 }
+}
 
+
+* {
+    box-sizing: border-box;
 }
 
 
@@ -146,17 +150,35 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
 }
 
-.center {
-    position: absolute;
-    left: 0;
-    top: 45%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
+.textcontainer {
+    position: relative;
 }
 
-.mainbox {
-  display: block;
+.titlecontainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.seoul {
+    width: 100%;
+    height: 100%;    
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+@media only screen and (max-width: 750px) {
+  .seoul {
+    width: 100%;
+    height: 100%;  
+    margin-top: 10px;
+
+}
 }
 
 .userbox {
