@@ -1,6 +1,6 @@
    
 <br />
-<div class="index-booyah-box col-xs-6">
+<div class="index-booyah-box col-md-6 col-sm-6 col-xs-12">
   <h2 class="text-center">Attractions & Restaurants</h2>
   <hr />
   <!-- checkbox and filter-->
@@ -43,7 +43,7 @@
 
 
   <% @places.each do |place| %>
-  <div class="index-booyah-inner-box col-xs-5">
+  <div class="index-booyah-inner-box col-xs-10 col-xs-offset-1 col-md-5">
 
     <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
     <i><%= place.description %></i><br />
@@ -64,7 +64,7 @@
 
    
 <!-- map -->
-<div class="index-booyah-box col-xs-6">
+<div class="index-booyah-box col-md-6 col-sm-6 col-xs-12">
 
 <script>
 

@@ -62,16 +62,14 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   padding-top: 20px;
   padding-bottom: 20px;
-  position: static;
-  display: block;
 }
 
 .index-booyah-inner-box {  
   border: 1px solid #ccc;
   border-color: #bebebd;
-  margin: 10px 20px; 
+  margin-bottom: 10px;
   padding: 10px;
-  display: block;  
+    
 }
 
 #map {
@@ -96,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 744px) {
   .show-booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -180,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   zoom: 1;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 744px) {
   .seoul {
     width: 100%;
     height: 100%;  
