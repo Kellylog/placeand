@@ -1,70 +1,8 @@
-   
-<br />
-<div class="index-booyah-box col-md-6 col-sm-6 col-xs-12">
-  <h2 class="text-center">Attractions & Restaurants</h2>
-  <hr />
-  <!-- checkbox and filter-->
+<div class="container-fluid">
+  <div class="row">
 
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label>Looking for..</label>&nbsp&nbsp     
-    <label class="checkbox-inline">
-      <input type="checkbox" value="attractions">
-      <%= image_tag 'see.png' %> Attractions       
-    </label> &nbsp&nbsp
-    <label class="checkbox-inline">
-      <input type="checkbox" value="restaurants">
-      <%= image_tag 'eat.png' %> Restaurants
-    </label>
-  </div>
-</form>
-
-<hr />
-
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label>Neighborhoods</label>  &nbsp&nbsp   
-    <label class="checkbox-inline">
-      <input type="checkbox" value="1">Hongdae
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" value="2">Itaewon
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" value="3">Myeongdong
-    </label>
-  </div>
-</form>
-  
-  <hr />
-  
-  <div class="clear"></div>
-
-
-
-  <% @places.each do |place| %>
-  <div class="index-booyah-inner-box col-xs-10 col-md-5">
-
-    <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
-    <i><%= place.description %></i><br />
-    <%= place.address %> 
-  </div>
-  <% end %>
-
-
-  <div class="clear"></div>
-
-
-
-</div>
-
-
-  
-
-
-   
 <!-- map -->
-<div class="index-booyah-box col-md-6 col-sm-6 col-xs-12">
+<div class="index-booyah-box col-md-6 col-xs-12">
 
 <script>
 
@@ -120,5 +58,74 @@ function initMap() {
 
 </div>
 
-<div class="clear"></div>
-<br />
+
+
+
+
+
+
+
+<div class="index-booyah-box col-md-6 col-xs-12">
+  <h2 class="text-center">Attractions & Restaurants</h2>
+  <hr />
+  <!-- checkbox and filter-->
+
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label>Looking for..</label>&nbsp&nbsp     
+    <label class="checkbox-inline">
+      <input type="checkbox" value="attractions">
+      <%= image_tag 'see.png' %> Attractions       
+    </label> &nbsp&nbsp
+    <label class="checkbox-inline">
+      <input type="checkbox" value="restaurants">
+      <%= image_tag 'eat.png' %> Restaurants
+    </label>
+  </div>
+</form>
+
+<hr />
+
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label>Neighborhoods</label>  &nbsp&nbsp   
+    <label class="checkbox-inline">
+      <input type="checkbox" value="1">Hongdae
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="2">Itaewon
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="3">Myeongdong
+    </label>
+  </div>
+</form>
+  
+  <hr />
+  
+  <div class="clear"></div>
+
+
+<div class="container-fluid">
+  <div class="row">
+  <% @places.each do |place| %>
+  <div class="index-booyah-inner-box col-xs-10 col-md-5">
+    <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
+    <i><%= place.description %></i><br />
+    <%= place.address %>
+  </div>
+
+  <% end %>
+  
+</div>
+
+</div>
+
+
+</div>
+  
+</div>
+</div>
+
+   
+
