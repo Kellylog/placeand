@@ -20,14 +20,14 @@
 
 <br /><br />
 <!-- search input -->
-<div class="row">  
-  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
-    <div class="input-group input-group-lg">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <%= submit_tag "Search", class: 'btn btn-danger btn-lg' %>        
-      </span>
-    </div><!-- /input-group -->
+<div class="row">    
+  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">    
+      <div class="form-group">        
+       <%= form_tag(places_path, :method => "get", id: "search-form") do %>
+       <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for..." %>
+       <%= submit_tag "search", class: "btn btn-danger", :name => nil %>
+       <% end %>
+      </div><!-- form-group -->    
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 

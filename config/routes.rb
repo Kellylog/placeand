@@ -1,11 +1,12 @@
 Placeand::Application.routes.draw do
 
   devise_for :users
-  root 'mainpages#index'
+  root 'mainpages#index'  
   get 'privacy', to: 'mainpages#privacy'
   get 'copyright', to: 'mainpages#copyright'
   get 'disclaimer', to: 'mainpages#disclaimer'
   get 'terms', to: 'mainpages#terms'
+
 
 
   resources :places do

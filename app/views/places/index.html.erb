@@ -80,6 +80,10 @@ function initMap() {
     <label class="checkbox-inline">
       <input type="checkbox" value="restaurants">
       <%= image_tag 'eat.png' %> Restaurants
+    </label> &nbsp&nbsp
+    <label class="checkbox-inline">
+      <input type="checkbox" value="accommodations">
+      <%= image_tag 'eat.png' %> Restaurants
     </label>
   </div>
 </form>
@@ -103,29 +107,27 @@ function initMap() {
   
   <hr />
   
-  <div class="clear"></div>
+ 
+<% if @places.blank? %>
+<div class="text-center">
+  <h3>There are no places containing the term <b><i><%= params[:search] %></i></b>.</h3>
+</div>
+<% end %>
 
-
-<div class="container-fluid">
-  <div class="row">
-  <% @places.each do |place| %>
-  <div class="index-booyah-inner-box col-xs-10 col-md-5">
+ <div class="row">
+  <% @places.each do |place| %> 
+  <div class="index-booyah-inner-box col-xs-10 col-sm-6">
     <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
     <i><%= place.description %></i><br />
     <%= place.address %>
   </div>
-
-  <% end %>
-  
-</div>
-
+  <% end %>  
 </div>
 
 
-</div>
   
 </div>
 </div>
 
-   
+    <div class="clear"></div>
 
