@@ -70,41 +70,25 @@ function initMap() {
   <hr />
   <!-- checkbox and filter-->
 
-<form class="form-inline" role="form">
+
+
+  <form class="form-inline" role="form">
   <div class="form-group">
     <label>Looking for..</label>&nbsp&nbsp     
     <label class="checkbox-inline">
-      <input type="checkbox" value="attractions">
+      <input type="checkbox" value="1">
       <%= image_tag 'see.png' %> Attractions       
     </label> &nbsp&nbsp
     <label class="checkbox-inline">
-      <input type="checkbox" value="restaurants">
+      <input type="checkbox" value="2">
       <%= image_tag 'eat.png' %> Restaurants
     </label> &nbsp&nbsp
     <label class="checkbox-inline">
-      <input type="checkbox" value="accommodations">
+      <input type="checkbox" value="3">
       <%= image_tag 'accommodations.png' %> Accommodations
     </label>
   </div>
 </form>
-
-<hr />
-
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label>Neighborhoods</label>  &nbsp&nbsp   
-    <label class="checkbox-inline">
-      <input type="checkbox" value="1">Hongdae
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" value="2">Itaewon
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" value="3">Myeongdong
-    </label>
-  </div>
-</form>
-  
   <hr />
   
  
@@ -113,6 +97,8 @@ function initMap() {
   <h3>There are no places containing the term <b><i><%= params[:search] %></i></b>.</h3>
 </div>
 <% end %>
+
+
 
  <div class="row">
   <% @places.each do |place| %> 
