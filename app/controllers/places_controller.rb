@@ -11,7 +11,6 @@ class PlacesController < ApplicationController
     else
       @places = Place.order("name")		 
     end  
-
 	end
 
 	def show
@@ -26,6 +25,7 @@ class PlacesController < ApplicationController
 
 
 def create
+  
   @place = current_user.places.create(place_params)
   if @place.valid?
     redirect_to places_path
@@ -50,5 +50,6 @@ def destroy
   def place_params
     params.require(:place).permit(:name, :address, :description)
   end
+
 
 end
