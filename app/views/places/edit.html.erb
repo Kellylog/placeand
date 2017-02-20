@@ -1,0 +1,12 @@
+<h2>Edit Your Place Details</h2>
+
+<%= simple_form_for @place do |f| %>
+  
+  <%= f.input :name %>
+  <br />
+  <%= f.input :address %> 
+  <br />   
+  <%= f.input :description %>
+  <br />
+  <%= f.submit 'Update', class: 'btn btn-primary' %>
+  <% end %>
