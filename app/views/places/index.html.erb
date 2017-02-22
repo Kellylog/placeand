@@ -74,15 +74,15 @@ function initMap() {
 <div class="text-center">
   <label>Looking for..</label>&nbsp     
     <label class="checkbox-inline">
-      <%= link_to image_tag('see.png') + 'Attractions', places_path(category: 'Attractions') %>
+      <%= link_to image_tag('see.png') + ' Attractions', places_path(category: 'Attractions') %>
     </label> &nbsp&nbsp
 
     <label class="checkbox-inline">
-      <%= link_to image_tag('eat.png') + 'Restaurants', places_path(category: 'Restaurants') %>
+      <%= link_to image_tag('eat.png') + ' Eat & Drink', places_path(category: 'Restaurants') %>
     </label> &nbsp&nbsp
 
     <label class="checkbox-inline">
-      <%= link_to image_tag('accommodations.png') + 'Accommodations', places_path(category: 'Accommodations') %>
+      <%= link_to image_tag('accommodations.png') + ' Accommodations', places_path(category: 'Accommodations') %>
     </label>
 
     <label class="checkbox-inline">
@@ -119,7 +119,7 @@ function initMap() {
     <%= image_tag 'accommodations.png' %>
     <% end %>
 
-    <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
+    &nbsp<b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
     <i><%= place.description %></i><br />
     <%= place.address %>
   </div>
