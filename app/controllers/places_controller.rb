@@ -5,12 +5,19 @@ class PlacesController < ApplicationController
 
 	def index
     @places = Place.all
+    
     #@places = Place.order(:name).page(params[:page]).per(6) 
     if params[:search]
       @places = Place.search(params[:search]).order("name")
     else
       @places = Place.order("name")		 
     end  
+
+    if params[:category]    
+      @category_id = Category.find_by(name: params[:category]).id
+      @places = Place.where(category_id: @category_id)
+    end
+    
 	end
 
 	def show
@@ -69,7 +76,7 @@ def destroy
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :description)
+    params.require(:place).permit(:name, :address, :description, :category_id)
   end
 
 

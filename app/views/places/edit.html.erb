@@ -1,7 +1,8 @@
 <h2>Edit Your Place Details</h2>
 
 <%= simple_form_for @place do |f| %>
-  
+
+  <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose one"} %>
   <%= f.input :name %>
   <br />
   <%= f.input :address %> 

@@ -70,25 +70,28 @@ function initMap() {
   <hr />
   <!-- checkbox and filter-->
 
-
-
-  <form class="form-inline" role="form">
-  <div class="form-group">
-    <label>Looking for..</label>&nbsp&nbsp     
+  
+<div class="text-center">
+  <label>Looking for..</label>&nbsp     
     <label class="checkbox-inline">
-      <input type="checkbox" value="1">
-      <%= image_tag 'see.png' %> Attractions       
+      <%= link_to image_tag('see.png') + 'Attractions', places_path(category: 'Attractions') %>
     </label> &nbsp&nbsp
+
     <label class="checkbox-inline">
-      <input type="checkbox" value="2">
-      <%= image_tag 'eat.png' %> Restaurants
+      <%= link_to image_tag('eat.png') + 'Restaurants', places_path(category: 'Restaurants') %>
     </label> &nbsp&nbsp
+
     <label class="checkbox-inline">
-      <input type="checkbox" value="3">
-      <%= image_tag 'accommodations.png' %> Accommodations
+      <%= link_to image_tag('accommodations.png') + 'Accommodations', places_path(category: 'Accommodations') %>
     </label>
+
+    <label class="checkbox-inline">
+      (<%= link_to 'RESET', places_path %>)
+    </label>
+
   </div>
-</form>
+
+    
   <hr />
   
  
@@ -103,6 +106,19 @@ function initMap() {
  <div class="row">
   <% @places.each do |place| %> 
   <div class="index-booyah-inner-box col-xs-10 col-sm-6">
+    
+    <% if place.category_id == 1 %>
+    <%= image_tag 'see.png' %>
+    <% end %>
+
+    <% if place.category_id == 2 %>
+    <%= image_tag 'eat.png' %>
+    <% end %>
+
+    <% if place.category_id == 3 %>
+    <%= image_tag 'accommodations.png' %>
+    <% end %>
+
     <b><%= link_to place.name, place_path(place), target: '_blank' %></b><br />
     <i><%= place.description %></i><br />
     <%= place.address %>
