@@ -52,24 +52,31 @@
 
 <div class="textcontainer col-xs-10 col-xs-offset-1"> 
 
-  <div class="clearfix col-sm-4 col-xs-12">        
+  <div class="clearfix col-sm-3 col-xs-6">        
     <%= link_to places_path do %>     
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
-     <div class="titlecontainer"><%= link_to 'Seoul', places_path %></div>     
+     <div class="titlecontainer"><%= link_to 'All the Places', places_path %></div>     
     <% end %>       
   </div>
 
-  <div class="clearfix col-sm-4 col-xs-12">    
+  <div class="clearfix col-sm-3 col-xs-6">    
     <%= link_to places_path do %>
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
-     <div class="titlecontainer"><%= link_to 'Seoul', places_path %></div>     
+     <div class="titlecontainer"><%= link_to 'Attractions', places_path(category: 'Attractions') %></div>     
     <% end %> 
   </div>
 
-  <div class="clearfix col-sm-4 col-xs-12">    
+  <div class="clearfix col-sm-3 col-xs-6">    
     <%= link_to places_path do %>
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
-     <div class="titlecontainer"><%= link_to 'Seoul', places_path %></div>     
+     <div class="titlecontainer"><%= link_to 'Eat&Drink', places_path(category: 'Restaurants') %></div>     
+    <% end %>   
+  </div>
+
+  <div class="clearfix col-sm-3 col-xs-6">    
+    <%= link_to places_path do %>
+     <%= image_tag "icon.png", class: "img-responsive seoul" %>
+     <div class="titlecontainer"><%= link_to 'Accommodations', places_path(category: 'Accommodations') %></div>     
     <% end %>   
   </div>
   
