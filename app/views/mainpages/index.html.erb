@@ -19,24 +19,20 @@
 
 <div class="clear"></div>
 <br /><br />
-<!-- search input -->
+
+
+
+<!-- search input -->  
 <div class="row">    
   <div class="col-lg-6 col-xs-8 col-xs-offset-2">   
-  
-      
-    
       <div class="form-group form-inline">   
-      <span class="input-group-btn">  
-      
+      <span class="input-group-btn">        
        <%= form_tag(places_path, :method => "get", id: "search-form") do %>
-       <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for..." %>
+       <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "What are you looking for?" %>
        <%= submit_tag "search", class: "btn btn-danger", :name => nil %>
        <% end %>
-       
-     </span>
-      </div><!-- form-group -->   
-      
-  
+      </span>
+      </div><!-- input-group -->     
   </div><!-- /.col -->
 </div><!-- /.row -->
 
@@ -46,34 +42,41 @@
 
 
 
+
+ 
+
+
+
+
+<div class="clear"></div>
 <br /><br /><br />
 
 <!-- 3 images -->
 
 <div class="textcontainer col-xs-10 col-xs-offset-1"> 
 
-  <div class="clearfix col-sm-3 col-xs-6">        
+  <div class="clearfix col-sm-3 col-xs-12">        
     <%= link_to places_path do %>     
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
      <div class="titlecontainer"><%= link_to 'All the Places', places_path %></div>     
     <% end %>       
   </div>
 
-  <div class="clearfix col-sm-3 col-xs-6">    
+  <div class="clearfix col-sm-3 col-xs-12">    
     <%= link_to places_path do %>
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
      <div class="titlecontainer"><%= link_to 'Attractions', places_path(category: 'Attractions') %></div>     
     <% end %> 
   </div>
 
-  <div class="clearfix col-sm-3 col-xs-6">    
+  <div class="clearfix col-sm-3 col-xs-12">    
     <%= link_to places_path do %>
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
      <div class="titlecontainer"><%= link_to 'Eat&Drink', places_path(category: 'Restaurants') %></div>     
     <% end %>   
   </div>
 
-  <div class="clearfix col-sm-3 col-xs-6">    
+  <div class="clearfix col-sm-3 col-xs-12">    
     <%= link_to places_path do %>
      <%= image_tag "icon.png", class: "img-responsive seoul" %>
      <div class="titlecontainer"><%= link_to 'Accommodations', places_path(category: 'Accommodations') %></div>     
